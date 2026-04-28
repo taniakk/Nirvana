@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Vertex Realty | Premium Commercial Spaces - Naigaon East</title>
+    <!-- Tailwind CSS v3 + Google Fonts + Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Tailwind Config Override for Premium Feel -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'Segoe UI', 'sans-serif'],
+                        'display': ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        'premium-gold': '#C5A059',
+                        'premium-dark': '#0A1A2F',
+                        'premium-navy': '#0F2A44',
+                        'premium-silver': '#F8F9FC',
+                        'graphite': '#1E2A3A',
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(107deg, rgba(10,26,47,0.92) 0%, rgba(15,42,68,0.85) 100%)",
+                        'gold-gradient': "linear-gradient(135deg, #E6C27A 0%, #B38F40 100%)",
+                        'property-overlay': "linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 100%)",
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 35px -12px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.05)',
+                        'gold': '0 10px 25px -5px rgba(197,160,89,0.15)',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'scale-glow': 'scaleGlow 0.4s ease-in-out',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        scaleGlow: {
+                            '0%': { transform: 'scale(0.98)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #FFFFFF;
+            scroll-behavior: smooth;
+        }
+        /* custom scrollbar for premium touch */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C5A059;
+            border-radius: 12px;
+        }
+        .gold-text {
+            background: linear-gradient(135deg, #E6C27A 0%, #B38F40 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hover-gold {
+            transition: all 0.3s ease;
+        }
+        .hover-gold:hover {
+            color: #C5A059;
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.4s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 30px -12px rgba(0,0,0,0.2);
+        }
+        .btn-gold {
+            background: linear-gradient(105deg, #C5A059 0%, #A27D3E 100%);
+            transition: all 0.3s;
+        }
+        .btn-gold:hover {
+            background: linear-gradient(105deg, #D4AE6A 0%, #B8924A 100%);
+            transform: scale(1.02);
+            box-shadow: 0 12px 22px -8px rgba(197,160,89,0.4);
+        }
+        .property-card {
+            background: linear-gradient(145deg, #FFFFFF, #FCFCFD);
+        }
+        .gradient-border {
+            position: relative;
+            background: white;
+            border-radius: 2rem;
+        }
+        .gradient-border::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 2rem;
+            padding: 1.5px;
+            background: linear-gradient(135deg, #E6C27A, #9B7A3A);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Navigation Bar Premium -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-full bg-gold-gradient flex items-center justify-center shadow-md">
+                    <i class="fas fa-building text-white text-xl"></i>
+                </div>
+                <span class="text-2xl font-display font-extrabold tracking-tight text-premium-dark">NIR<span class="gold-text">VANA</span></span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+                <a href="#home" class="hover:text-premium-gold transition">Home</a>
+                <a href="#property" class="hover:text-premium-gold transition">The Gala</a>
+                <a href="#clients" class="hover:text-premium-gold transition">Trusted By</a>
+                <a href="#contact" class="hover:text-premium-gold transition">Inquire</a>
+            </div>
+            <div class="flex gap-3">
+                <a href="#contact" class="hidden md:flex bg-premium-dark text-white px-5 py-2 rounded-full text-sm font-semibold items-center gap-2 shadow-md hover:bg-premium-navy transition"><i class="fas fa-phone-alt"></i> Connect</a>
+                <button id="mobile-menu-btn" class="md:hidden text-2xl text-premium-dark focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- mobile menu (hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 py-4 px-6 flex flex-col gap-4 shadow-lg">
+            <a href="#home" class="hover:text-premium-gold transition font-medium">Home</a>
+            <a href="#property" class="hover:text-premium-gold transition font-medium">The Gala</a>
+            <a href="#clients" class="hover:text-premium-gold transition font-medium">Trusted By</a>
+            <a href="#contact" class="hover:text-premium-gold transition font-medium">Inquire</a>
+            <a href="#contact" class="bg-premium-dark text-white text-center py-2 rounded-full font-semibold">Contact Sales</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section || 2019 + prestige -->
+    <section id="home" class="relative pt-32 md:pt-40 pb-20 overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-10"></div>
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-[fadeInUp_0.6s_ease-out]">
+                    <div class="inline-flex items-center gap-2 bg-premium-silver rounded-full px-4 py-1.5 shadow-sm mb-6">
+                        <span class="w-2 h-2 rounded-full bg-premium-gold animate-pulse"></span>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-premium-dark">Est. 2019 • 500+ Happy Clients</span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-display font-extrabold leading-tight tracking-tight text-premium-dark">Where <span class="gold-text">Vision</span> Meets <br>Prime Commercial Realty</h1>
+                    <p class="text-gray-600 text-lg mt-6 leading-relaxed max-w-lg">Exclusive commercial & residential solutions in Mumbai's most promising micro-markets. Trusted by India’s top developers.</p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <a href="#property" class="btn-gold text-white font-bold px-8 py-3 rounded-full shadow-lg flex items-center gap-2 transition"><i class="fas fa-arrow-right"></i> Explore Property</a>
+                        <a href="#contact" class="border border-premium-gold text-premium-dark bg-transparent hover:bg-premium-gold/10 px-8 py-3 rounded-full font-semibold transition"><i class="fas fa-calendar-check"></i> Schedule Visit</a>
+                    </div>
+                    <div class="flex gap-6 mt-12">
+                        <div><span class="block text-2xl font-black text-premium-dark">2019</span><span class="text-gray-500 text-sm">Founded</span></div>
+                        <div><span class="block text-2xl font-black text-premium-dark">500+</span><span class="text-gray-500 text-sm">Happy Clients</span></div>
+                        <div><span class="block text-2xl font-black text-premium-dark">7+</span><span class="text-gray-500 text-sm">Projects Delivered</span></div>
+                    </div>
+                </div>
+                <div class="relative bg-white rounded-3xl shadow-premium p-1 gradient-border animate-[scaleGlow_0.7s_ease-out]">
+                    <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury commercial property" class="rounded-2xl object-cover w-full h-[380px] shadow-md">
+                    <div class="absolute -bottom-5 -right-3 bg-white shadow-xl rounded-xl py-3 px-5 backdrop-blur-sm border border-gray-100">
+                        <i class="fas fa-map-marker-alt text-premium-gold mr-1"></i>
+                        <span class="text-sm font-medium">Naigaon East · Prime Corridor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Property Section: Gala no.1, Jai Vijay Nagdi Apt -->
+    <section id="property" class="py-20 bg-gradient-to-br from-premium-silver to-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <span class="text-premium-gold font-semibold tracking-wider text-sm uppercase bg-white shadow-sm rounded-full px-4 py-1.5 inline-block">Featured Listing</span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold mt-4 text-premium-dark">Prime Commercial Gala <br><span class="gold-text">For Sale / Rent</span></h2>
+                <div class="w-24 h-1 bg-gold-gradient mx-auto mt-5 rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Left: property details -->
+                <div class="space-y-6">
+                    <div class="bg-white rounded-2xl p-6 shadow-premium card-hover">
+                        <div class="flex items-center gap-3 mb-2">
+                            <i class="fas fa-store text-3xl text-premium-gold"></i>
+                            <h3 class="text-2xl font-bold">Gala no.1, Jai Vijay Nagdi Apt.</h3>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-600 mt-1 mb-4">
+                            <i class="fas fa-location-dot text-premium-gold"></i>
+                            <span>Opposite Seven Square School, Naigaon East, Mumbai</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 border-y border-gray-100 py-5 my-3">
+                            <div><span class="text-gray-500 text-sm">Status</span><p class="font-bold flex gap-2"><span class="bg-green-100 text-green-800 px-2 py-0.5 rounded-full text-xs">Sale</span> <span class="bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full text-xs">Rent</span></p></div>
+                            <div><span class="text-gray-500 text-sm">Property Type</span><p class="font-semibold">Commercial Gala / Retail / Office</p></div>
+                            <div><span class="text-gray-500 text-sm">Carpet Area</span><p class="font-semibold">~625 sq.ft. (negotiable) <span class="text-xs text-gray-400">*exact measurement upon visit</span></p></div>
+                            <div><span class="text-gray-500 text-sm">Ideal For</span><p class="font-semibold">Showroom | Godown | Office | Studio</p></div>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed">Situated directly opposite Seven Square School — one of Naigaon East's most prominent landmarks, ensuring high pedestrian & vehicular visibility. The property enjoys immediate proximity to residential catchments & upcoming infrastructure projects.</p>
+                        <div class="mt-5 flex flex-wrap gap-3">
+                            <span class="bg-gray-100 text-premium-dark px-3 py-1 rounded-full text-xs font-medium"><i class="far fa-building mr-1"></i> High Footfall</span>
+                            <span class="bg-gray-100 text-premium-dark px-3 py-1 rounded-full text-xs font-medium"><i class="fas fa-road"></i> Western suburb connectivity</span>
+                            <span class="bg-gray-100 text-premium-dark px-3 py-1 rounded-full text-xs font-medium"><i class="fas fa-school"></i> 100m from Seven Square</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-premium-dark text-white p-6 rounded-2xl shadow-premium">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fas fa-chart-line text-premium-gold text-2xl"></i>
+                            <h4 class="text-xl font-bold">Market Intelligence</h4>
+                        </div>
+                        <p class="text-gray-200 text-sm leading-relaxed">Naigaon East avg. price: ₹5,941/sq.ft. Premium segment (Sunteck, Lodha) commands ₹8,500+ . Rental yields are appreciating due to educational hubs & new metro connectivity. Secure a prime asset today.</p>
+                    </div>
+                </div>
+
+                <!-- Right: Enhanced features + CTA -->
+                <div class="space-y-6">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl">
+                     <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" 
+     alt="Commercial Gala Interior" 
+     class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-property-overlay flex items-end p-5">
+                            <div class="text-white"><i class="fas fa-eye mr-1"></i> Street facing · prime visibility</div>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 bg-white p-5 rounded-xl shadow-md">
+                        <div class="text-center flex-1">
+                            <i class="fas fa-hand-holding-usd text-2xl text-premium-gold"></i>
+                            <p class="font-bold text-premium-dark mt-1">Sale Price</p>
+                            <p class="text-sm text-gray-600">On Request<br><span class="text-xs">*Best in micro-market</span></p>
+                        </div>
+                        <div class="text-center flex-1">
+                            <i class="fas fa-file-signature text-2xl text-premium-gold"></i>
+                            <p class="font-bold text-premium-dark mt-1">Monthly Rent</p>
+                            <p class="text-sm text-gray-600">Competitive<br><span class="text-xs">Negotiable</span></p>
+                        </div>
+                        <div class="text-center flex-1">
+                            <i class="fas fa-key text-2xl text-premium-gold"></i>
+                            <p class="font-bold text-premium-dark mt-1">Possession</p>
+                            <p class="text-sm text-gray-600">Immediate</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-premium border-l-4 border-premium-gold">
+                        <p class="text-gray-700 italic">"One of the most strategically located commercial spaces in Naigaon East. High visibility opposite school + residential density makes this a rare opportunity."</p>
+                        <p class="font-bold mt-3 text-premium-dark">— NIRVANA Team</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted by Prestigious Developers Section -->
+    <style>
+    /* Add this style - keeps the cards moving continuously */
+    .scrolling-wrapper {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        cursor: grab;
+    }
+    .scrolling-wrapper:active {
+        cursor: grabbing;
+    }
+    .scrolling-wrapper .scrolling-grid {
+        display: inline-flex;
+        gap: 2rem;
+        white-space: normal;
+        animation: scrollCards 20s linear infinite;
+    }
+    .scrolling-wrapper:hover .scrolling-grid {
+        animation-play-state: paused;
+    }
+    @keyframes scrollCards {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+    /* Hide scrollbar for cleaner look */
+    .scrolling-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+    .scrolling-wrapper {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
+
+<section id="clients" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        <div class="inline-flex bg-premium-silver px-4 py-1.5 rounded-full text-premium-gold font-semibold text-sm tracking-wider mb-4"><i class="fas fa-crown mr-2 text-xs"></i> Strategic Alliances</div>
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-premium-dark">Trusted by India's <span class="gold-text">Leading Developers</span></h2>
+        <p class="text-gray-500 max-w-2xl mx-auto mt-3">We partner with ultra-premium real estate groups to offer unmatched commercial assets.</p>
+        
+        <!-- Scrolling wrapper added here -->
+        <div class="scrolling-wrapper mt-14">
+            <div class="scrolling-grid">
+                <!-- Original cards repeated twice for seamless loop -->
+                <div class="flex justify-center p-5 bg-premium-silver/40 rounded-2xl backdrop-blur-sm hover:shadow-md transition"><span class="text-xl md:text-2xl font-black tracking-tight text-gray-700">Abhinandan Lodha</span></div>
+                <div class="flex justify-center p-5 bg-premium-silver/40 rounded-2xl"><span class="text-xl md:text-2xl font-bold text-gray-800">SUNTECK</span></div>
+                <div class="flex justify-center p-5 bg-premium-silver/40 rounded-2xl"><span class="text-xl md:text-2xl font-bold tracking-wide text-gray-800">NAVKAR</span></div>
+                <div class="flex justify-center p-5 bg-premium-silver/40 rounded-2xl"><span class="text-lg md:text-xl font-bold text-gray-800">NAKSHATRA JSB GROUP</span></div>
+                <div class="flex justify-center p-5 bg-premium-silver/40 rounded-2xl"><span class="text-xl md:text-2xl font-medium tracking-wider text-gray-800">SEASON</span></div>
+                <!-- Duplicate for seamless loop -->
+                <div class="flex justify-center p-5 bg-premium-silver/40 rounded-2xl backdrop-blur-sm hover:shadow-md transition"><span class="text-xl md:text-2xl font-black tracking-tight text-gray-700">Abhinandan Lodha</span></div>
+                <div class="flex justify-center p-5 bg-premium-silver/40 rounded-2xl"><span class="text-xl md:text-2xl font-bold text-gray-800">SUNTECK</span></div>
+                <div class="flex justify-center p-5 bg-premium-silver/40 rounded-2xl"><span class="text-xl md:text-2xl font-bold tracking-wide text-gray-800">NAVKAR</span></div>
+                <div class="flex justify-center p-5 bg-premium-silver/40 rounded-2xl"><span class="text-lg md:text-xl font-bold text-gray-800">NAKSHATRA JSB GROUP</span></div>
+                <div class="flex justify-center p-5 bg-premium-silver/40 rounded-2xl"><span class="text-xl md:text-2xl font-medium tracking-wider text-gray-800">SEASON</span></div>
+            </div>
+        </div>
+        
+        <div class="mt-8 text-gray-500 text-sm flex justify-center gap-6 flex-wrap">
+            <span><i class="fas fa-check-circle text-premium-gold"></i> 500+ closed transactions</span>
+            <span><i class="fas fa-chart-simple text-premium-gold"></i> 6+ years of market mastery</span>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact & inquiry section premium -->
+    <section id="contact" class="py-20 relative">
+        <div class="absolute inset-0 bg-premium-dark/5"></div>
+        <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-10 bg-white rounded-3xl shadow-2xl overflow-hidden">
+                <div class="p-8 lg:p-10">
+                    <span class="text-premium-gold font-semibold text-sm uppercase tracking-wider"><i class="fas fa-headset"></i> Get in touch</span>
+                    <h3 class="text-3xl font-display font-bold mt-2 text-premium-dark">Schedule a <span class="gold-text">site visit</span> today</h3>
+                    <p class="text-gray-500 mt-3 mb-6">Explore Gala no.1, Jai Vijay Nagdi Apt. opposite Seven Square School. Our expert team will assist you with all documentation & best pricing.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4"><i class="fas fa-phone-alt w-6 text-premium-gold"></i><span>+91 00000 00000 (Sales Hotline)</span></div>
+                        <div class="flex items-center gap-4"><i class="fas fa-envelope w-6 text-premium-gold"></i><span>connect@vertexrealty.co.in</span></div>
+                        <div class="flex items-center gap-4"><i class="fas fa-map-marker-alt w-6 text-premium-gold"></i><span>Gala no.1, Jai Vijay Nagdi, Naigaon East (Opp Seven Square School)</span></div>
+                    </div>
+                    <div class="flex gap-4 mt-8">
+                        <a href="#" class="bg-premium-dark text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow hover:bg-premium-navy"><i class="fab fa-whatsapp"></i> WhatsApp Enquiry</a>
+                        <a href="#" class="border border-gray-300 px-5 py-2.5 rounded-full text-sm font-semibold text-gray-700 hover:border-premium-gold transition"><i class="fas fa-download"></i> Brochure</a>
+                    </div>
+                </div>
+                <div class="bg-premium-dark p-8 lg:p-10 text-white">
+                    <h4 class="text-2xl font-bold">Request a callback</h4>
+                    <p class="text-gray-300 text-sm mt-1">Fill in your details for exclusive deal insights.</p>
+                    <form class="mt-6 space-y-5">
+                        <input type="text" placeholder="Full name" class="w-full bg-white/10 border border-white/20 rounded-xl py-3 px-4 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-premium-gold">
+                        <input type="email" placeholder="Email address" class="w-full bg-white/10 border border-white/20 rounded-xl py-3 px-4 text-white placeholder:text-gray-400 focus:outline-none">
+                        <input type="tel" placeholder="Phone number" class="w-full bg-white/10 border border-white/20 rounded-xl py-3 px-4 text-white placeholder:text-gray-400 focus:outline-none">
+                        <select class="w-full bg-white/10 border border-white/20 rounded-xl py-3 px-4 text-white">
+                            <option>Interest: Sale / Rent / Both</option>
+                            <option>Sale</option>
+                            <option>Rent</option>
+                            <option>Investment inquiry</option>
+                        </select>
+                        <button type="submit" class="btn-gold w-full font-bold py-3 rounded-xl text-white transition shadow-lg"><i class="fas fa-paper-plane mr-2"></i> Send Request</button>
+                    </form>
+                    <p class="text-xs text-gray-400 mt-4">*Our team will connect within 2 hours. 500+ clients served since 2019.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-premium-dark text-white py-10 border-t border-gray-800">  
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2"><i class="fas fa-gem text-premium-gold text-xl"></i><span class="font-display font-bold text-xl">NIRVANA</span><span class="text-xs opacity-70 ml-2">Est. 2019</span></div>
+            <div class="text-gray-400 text-sm">© 2026 NIRVANA — Premium Commercial & Residential Solutions. All rights reserved.</div>
+            <div class="flex gap-5 text-premium-gold text-lg"><i class="fab fa-linkedin-in hover:scale-110 transition"></i><i class="fab fa-instagram hover:scale-110 transition"></i><i class="fab fa-facebook-f hover:scale-110 transition"></i></div>
+        </div>
+        <div class="text-center text-gray-500 text-xs mt-4">📍 Gala no.1, Jai Vijay Nagdi Apt., Opposite Seven Square School, Naigaon East — exact location ready for inspection</div>
+    </footer>
+
+    <!-- Mobile Menu Toggle -->
+   <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        // Smooth anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if(href === "#" || href === "") return;
+                const target = document.querySelector(href);
+                if(target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    if(mobileMenu && !mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        // Close mobile menu on scroll down
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+    </script>
+</body>
+</html>
